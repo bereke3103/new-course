@@ -8,10 +8,11 @@ class EmployersAddForm extends Component {
       name: '',
       salary: '',
     };
+    // console.log(props);
   }
 
-  onChangeInput = (e) => {
-    console.log(e);
+  onChangeValue = (e) => {
+    console.log(e.target.name);
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -28,7 +29,7 @@ class EmployersAddForm extends Component {
             placeholder="Как его зовут?"
             name="name"
             value={name}
-            onChange={this.onChangeInput}
+            onChange={this.onChangeValue}
           />
           <input
             type="number"
@@ -36,7 +37,7 @@ class EmployersAddForm extends Component {
             placeholder="З/П в $?"
             value={salary}
             name="salary"
-            onChange={this.onChangeInput}
+            onChange={this.onChangeValue}
           />
 
           <button type="submit" className="btn btn-outline-light">
