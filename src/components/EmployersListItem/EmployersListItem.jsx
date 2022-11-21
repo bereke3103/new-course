@@ -4,6 +4,7 @@ import './EmployersListItem.css';
 class EmployersListItem extends Component {
   constructor(props) {
     super(props);
+    // console.log(props);
     this.state = {
       increase: false,
       star: false,
@@ -22,7 +23,7 @@ class EmployersListItem extends Component {
     }));
   };
   render() {
-    const { name, salary } = this.props;
+    const { name, salary, onDelete, id } = this.props;
     const { increase, star } = this.state;
     let classNames = 'list-group-item d-flex justify-content-between';
     if (increase) {
@@ -52,7 +53,11 @@ class EmployersListItem extends Component {
             <i className="fas fa-cookie"></i>
           </button>
 
-          <button type="button" className="btn-trash btn-sm ">
+          <button
+            type="button"
+            className="btn-trash btn-sm "
+            onClick={onDelete}
+          >
             <i className="fas fa-trash"></i>
           </button>
           <i className="fas fa-star"></i>
