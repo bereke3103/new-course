@@ -4,10 +4,10 @@ import './EmployersList.css';
 class EmployersList extends Component {
   constructor(props) {
     super(props);
-    // console.log(props);
   }
+
   render() {
-    const { data, onDelete } = this.props;
+    const { data, onDelete, onToggleIncrease, onToggleStar } = this.props;
     const elements = data.map((item) => {
       const { id, ...itemProps } = item;
       return (
@@ -15,6 +15,8 @@ class EmployersList extends Component {
           key={id}
           {...itemProps}
           onDelete={() => onDelete(id)}
+          onToggleIncrease={() => onToggleIncrease(id)}
+          onToggleStar={() => onToggleStar(id)}
         />
       );
     });
